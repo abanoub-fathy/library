@@ -7,8 +7,12 @@
     <title>My Library</title>
   </head>
   <body>
-    <h1>Before from layout</h1>
+    <!-- Note that the layout will be always rendered  -->
+
+    <!-- This is the header -->
+    <%- include('../partials/header.ejs') %>
+
+    <!-- The body will be replaced with what ever you rendered from views -->
     <%- body %>
-    <h1>After from layout</h1>
   </body>
 </html>

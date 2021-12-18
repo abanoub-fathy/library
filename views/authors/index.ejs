@@ -1,0 +1,12 @@
+<form action="/authors" method="get">
+  <label for="name"></label>
+  <input type="search" id="name" name="name" value="<%= query %> " />
+  <button type="submit">Search</button>
+</form>
+
+<h1>All Authors Page</h1>
+<ul>
+  <% authors.map(({name}) => {%>
+  <li><%= name %></li>
+  <% }) %>
+</ul>
