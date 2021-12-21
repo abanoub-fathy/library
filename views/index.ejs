@@ -1,1 +1,12 @@
-<h1>Home page From views/index.js</h1>
+<h1>Home page Library</h1>
+<hr />
+<!-- Display the books details -->
+<% recentlyBooks.map((book) => { %>
+<div class="book">
+  <h2><%= book.title %></h2>
+  <% if(book.imgPath) {%>
+  <img src="<%= book.imgPath %>" width="350" height="350" />
+  <li>Date: <%= book.publishDate %></li>
+  <%} %>
+</div>
+<% }) %>

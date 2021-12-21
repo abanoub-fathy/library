@@ -1,0 +1,48 @@
+<h1>All Books Page</h1>
+<hr />
+<!-- Book search Form -->
+<form action="/books" method="get">
+  <div>
+    <label for="title">title</label>
+    <input
+      type="search"
+      id="title"
+      name="title"
+      value="<%= searchQuery.title %>"
+    />
+  </div>
+
+  <div>
+    <label for="puplishAfter">Publish After</label>
+    <input
+      type="date"
+      id="puplishAfter"
+      name="puplishAfter"
+      value="<%=searchQuery.puplishAfter %>"
+    />
+  </div>
+
+  <div>
+    <label for="puplishBefore">Publish Before</label>
+    <input
+      type="date"
+      id="puplishBefore"
+      name="puplishBefore"
+      value="<%= searchQuery.puplishBefore %>"
+    />
+  </div>
+
+  <button type="submit">Search</button>
+</form>
+
+<!-- Display the books details -->
+<hr />
+<% books.map((book) => { %>
+<div class="book">
+  <h2><%= book.title %></h2>
+  <% if(book.imgPath) {%>
+  <img src="<%= book.imgPath %>" width="350" height="350" />
+  <li>Date: <%= book.publishDate %></li>
+  <%} %>
+</div>
+<% }) %>

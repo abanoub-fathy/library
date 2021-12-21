@@ -4,6 +4,7 @@ const expressLayouts = require("express-ejs-layouts");
 const path = require("path");
 const router = require("./routers/router");
 const authorRouter = require("./routers/author");
+const booksRouter = require("./routers/book");
 const bodyParser = require("body-parser");
 
 // important paths
@@ -20,5 +21,6 @@ app.use(expressLayouts);
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 app.use("/", router);
 app.use("/authors", authorRouter);
+app.use("/books", booksRouter);
 
 module.exports = app;
