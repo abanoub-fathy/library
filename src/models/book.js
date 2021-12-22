@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const baseUploadsPath = "uploads/covers";
-const path = require("path");
+const dummyBook = require("./dummy-book.js");
 
 const bookSchema = new mongoose.Schema(
   {
@@ -17,9 +16,11 @@ const bookSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
-    cover: {
+    coverImg: {
+      type: Buffer,
+    },
+    imgType: {
       type: String,
-      trim: true,
     },
     publishDate: {
       type: Date,
@@ -37,12 +38,14 @@ const bookSchema = new mongoose.Schema(
 );
 
 // create virtual property imgPath
+
 bookSchema.virtual("imgPath").get(function () {
   const book = this;
-  if (book.cover) {
-    return path.join("/", baseUploadsPath, book.cover);
+  if (book.coverImg) {
+    return `data:${book.imgType};base64,${book.coverImg.toString("base64")}`;
+  } else {
+    return `data:image/jpeg;base64,${dummyBook}`;
   }
 });
 
 module.exports = mongoose.model("Book", bookSchema);
-module.exports.baseUploadsPath = baseUploadsPath;
