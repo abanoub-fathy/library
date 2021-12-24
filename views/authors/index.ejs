@@ -6,7 +6,14 @@
 
 <h1>All Authors Page</h1>
 <ul>
-  <% authors.map(({name}) => {%>
-  <li><%= name %></li>
+  <% authors.map(({name, id}) => {%>
+  <div>Name: <%= name %>
+  <a href="/authors/<%= id %>">show</a>
+  <a href="/authors/<%= id %>/edit">Edit</a>
+  <%- include('../partials/deleteForm.ejs', {url: `/authors/${id}?_method=DELETE` }) %> 
+  <b>Note: delete an author will also delete all related books</b>
+  <hr>
   <% }) %>
 </ul>
+
+<%- include('../partials/errorMessage.ejs') %>

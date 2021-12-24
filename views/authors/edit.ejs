@@ -1,0 +1,7 @@
+<h1>Edit Author</h1>
+<form action="/authors/<%= author.id %>?_method=PATCH" method="post">
+  <%- include('./_form-inputs.ejs') %>
+  <a href="/authors/<%= author.id %> ">Cancel</a>
+  <button type="submit">Update</button>
+  <%- include('../partials/errorMessage.ejs') %>
+</form>

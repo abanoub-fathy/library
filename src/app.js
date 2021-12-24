@@ -6,6 +6,7 @@ const router = require("./routers/router");
 const authorRouter = require("./routers/author");
 const booksRouter = require("./routers/book");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 // important paths
 const publicPath = path.join(__dirname, "../public");
@@ -20,6 +21,9 @@ app.use(express.static(publicPath));
 app.use(expressLayouts);
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 app.use("/", router);
+app.use(methodOverride("_method"));
+
+// Routers should be loaded after all configs
 app.use("/authors", authorRouter);
 app.use("/books", booksRouter);
 
