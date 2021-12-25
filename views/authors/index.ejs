@@ -10,7 +10,7 @@
   <div>Name: <%= name %>
   <a href="/authors/<%= id %>">show</a>
   <a href="/authors/<%= id %>/edit">Edit</a>
-  <%- include('../partials/deleteForm.ejs', {url: `/authors/${id}?_method=DELETE` }) %> 
+  <%- include('../partials/deleteForm.ejs', {url: `/authors/${id}?_method=DELETE`}) %> 
   <b>Note: delete an author will also delete all related books</b>
   <hr>
   <% }) %>

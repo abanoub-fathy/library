@@ -39,10 +39,10 @@
 <hr />
 <% books.map((book) => { %>
 <div class="book">
-  <h2><%= book.title %></h2>
-  <% if(book.imgPath) {%>
-  <img src="<%= book.imgPath %>" width="100" height="150" />
-  <li>Date: <%= book.publishDate %></li>
-  <%} %>
+  <!-- Show Book Link -->
+  <a href="/books/<%= book.id %> ">
+    <img src="<%= book.imgPath %>" width="100" height="150" />
+    <p><%= book.title %></p>
+  </a>
 </div>
 <% }) %>

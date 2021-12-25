@@ -1,0 +1,9 @@
+<h1>Edit a Book</h1>
+<hr />
+<form action="/books/<%= book.id %>?_method=PATCH" method="POST">
+  <%- include('./_form-inputs.ejs') %>
+  <a href="/books">Cancel</a>
+  <button type="submit">Update</button>
+</form>
+
+<div class="error"><% if(error){ %> <%= error %> <% }%></div>

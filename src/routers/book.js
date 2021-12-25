@@ -43,11 +43,8 @@ router.get("/new", async (req, res) => {
 // [POST] /books/
 router.post("/", async (req, res) => {
   const book = new Book({
-    title: req.body.title,
-    author: req.body.author.trim(),
-    description: req.body.description,
-    pages: req.body.pages,
-    publishDate: new Date(req.body.publishDate),
+    // spreaad the req object
+    ...req.body,
   });
 
   // save cover image function
@@ -95,5 +92,76 @@ const renderNewBookPage = async (res, book, hasError = false) => {
     res.redirect("/books");
   }
 };
+
+// show book page end point
+router.get("/:id", async (req, res) => {
+  try {
+    // fetch that book by id and poulate the author field
+    const book = await Book.findById(req.params.id).populate("author").exec();
+
+    res.render("books/show", {
+      book,
+    });
+  } catch (e) {
+    res.redirect("/books");
+    console.log(e);
+  }
+});
+
+// edit book page end point
+router.get("/:id/edit", async (req, res) => {
+  try {
+    // fetch the book we need to edit
+    const book = await Book.findById(req.params.id);
+    const authors = await Author.find();
+    res.render("books/edit", {
+      book,
+      authors,
+      error: null,
+    });
+  } catch {
+    res.redirect("/books");
+  }
+});
+
+// update book end point
+router.patch("/:id", async (req, res) => {
+  try {
+    // update the book we need to update
+    let book = await Book.findByIdAndUpdate(
+      req.params.id,
+      {
+        ...req.body,
+      },
+      { runValidators: true }
+    );
+
+    // save cover image function
+    saveCoverImg(book, req.body.cover);
+
+    // save changes after setting the cover image
+    await book.save();
+
+    res.redirect("/books");
+  } catch {
+    const authors = await Author.find();
+    const book = await Book.findById(req.params.id);
+    res.render("books/edit", {
+      book,
+      authors,
+      error: "cannot update this book!",
+    });
+  }
+});
+
+// delete book end point
+router.delete("/:id", async (req, res) => {
+  try {
+    await Book.findByIdAndDelete(req.params.id);
+    res.redirect("/books");
+  } catch {
+    res.redirect("/");
+  }
+});
 
 module.exports = router;
