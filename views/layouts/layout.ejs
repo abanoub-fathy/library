@@ -15,6 +15,7 @@
       href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/css/main.css" />
 
     <!-- Filepond Scripts -->
     <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
@@ -32,6 +33,7 @@
     ></script>
     <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
     <script defer src="/js/filepond.js"></script>
+    <script defer src="/js/main.js"></script>
   </head>
   <body>
     <!-- Note that the layout will be always rendered  -->
@@ -40,6 +42,6 @@
     <%- include('../partials/header.ejs') %>
 
     <!-- The body will be replaced with what ever you rendered from views -->
-    <%- body %>
+    <div class="container"><%- body %></div>
   </body>
 </html>

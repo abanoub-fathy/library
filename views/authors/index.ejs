@@ -1,15 +1,15 @@
 <form action="/authors" method="get">
   <label for="name"></label>
   <input type="search" id="name" name="name" value="<%= query %> " />
-  <button type="submit">Search</button>
+  <button type="submit" class="btn btn-primary">Search</button>
 </form>
 
 <h1>All Authors Page</h1>
 <ul>
   <% authors.map(({name, id}) => {%>
   <div>Name: <%= name %>
-  <a href="/authors/<%= id %>">show</a>
-  <a href="/authors/<%= id %>/edit">Edit</a>
+  <a href="/authors/<%= id %>" class="btn btn-primary">show</a>
+  <a href="/authors/<%= id %>/edit" class="btn btn-primary">Edit</a>
   <%- include('../partials/deleteForm.ejs', {url: `/authors/${id}?_method=DELETE`}) %> 
   <b>Note: delete an author will also delete all related books</b>
   <hr>

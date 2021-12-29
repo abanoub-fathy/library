@@ -1,0 +1,33 @@
+.books-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  column-gap: calc(10% / 3);
+}
+
+.books-grid .book {
+  flex-basis: calc(90% / 4);
+}
+.book .card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 30px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: var(--bg-dark-color);
+  color: var(--text-light);
+  row-gap: 15px;
+}
+
+.card .title {
+  text-decoration: none;
+  font-size: 29px;
+}
+
+.card img {
+  margin: auto;
+  display: block;
+}

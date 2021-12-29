@@ -1,7 +1,7 @@
 <h2>Author Details</h2>
 <hr />
 <h3><%= author.name %></h3>
-<a href="/authors/<%= author._id %>/edit">Edit</a>
+<a href="/authors/<%= author._id %>/edit" class="btn btn-primary">Edit</a>
 <%- include('../partials/deleteForm.ejs', {url:
 `/authors/${author.id}?_method=DELETE`}) %>
 

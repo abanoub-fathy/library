@@ -1,0 +1,110 @@
+form.special-form {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: rgba(51, 9, 55, 0.5);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+form.special-form .form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+form.special-form .form-row .form-field {
+  flex-basis: 45%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+form.special-form .special-row {
+  align-items: stretch;
+}
+
+form.special-form .special-row .form-field:first-child {
+  flex-basis: 30%;
+}
+
+form.special-form .special-row .form-field:last-child {
+  flex-basis: 60%;
+}
+
+form.special-form .form-field-full-width {
+  flex-basis: 100% !important;
+  max-width: 100%;
+}
+
+form.special-form .form-row .form-field input,
+form.special-form .form-row .form-field select,
+form.special-form .form-row .form-field textarea {
+  width: 100%;
+  padding: 20px;
+  outline: none;
+  border: 4px solid rgb(51, 9, 55);
+  background: var(--bg-light-color);
+  color: var(--text-light);
+  font-size: 20px;
+  border-radius: 0.75rem;
+  font-family: mainFont;
+  font-weight: normal;
+  transition: 0.5s ease-in-out;
+}
+
+form.special-form .form-row .form-field input:focus,
+form.special-form .form-row .form-field select:focus,
+form.special-form .form-row .form-field textarea:focus {
+  border-color: var(--text-light);
+}
+
+form.special-form .form-row .form-field textarea {
+  resize: none;
+  height: 100%;
+}
+
+/* Styling the filepond */
+.filepond--root {
+  font-size: 20px;
+  font-weight: normal;
+  font-family: mainFont;
+}
+
+.filepond--panel {
+  background: var(--bg-light-color);
+  border: 4px solid rgb(51, 9, 55);
+  background: var(--bg-light-color);
+}
+
+.filepond--drop-label {
+  color: var(--text-light);
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-group > button {
+  margin-right: 50px;
+}
+
+.btn-group .btn-danger {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.btn-group .btn-danger:hover {
+  opacity: 1;
+}

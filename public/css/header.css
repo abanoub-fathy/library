@@ -1,0 +1,119 @@
+:root {
+  --text-dark: #bf5dec;
+}
+
+header {
+  background-color: rgba(144, 62, 182, 0.3);
+  position: relative;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--text-light);
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+header .container .logo a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+header .container .logo a:hover {
+  color: var(--text-light);
+}
+
+header .container nav ul {
+  display: flex;
+}
+
+header .container nav ul li {
+  margin-left: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+header .container nav ul li a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: normal;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+header .container nav ul li:hover a {
+  color: var(--text-dark);
+}
+
+header .container nav ul li:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-dark);
+  bottom: -39px;
+  left: 0;
+}
+
+header .bars {
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  cursor: pointer;
+  display: none;
+  padding: 5px 10px;
+  border: 3px solid var(--text-dark);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+header .bars .bar {
+  width: 30px;
+  height: 2.5px;
+  background-color: var(--text-dark);
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  header .bars {
+    display: flex;
+  }
+
+  header .container nav {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 100%;
+    left: 0;
+    display: none;
+  }
+
+  header .container nav ul {
+    flex-direction: column;
+  }
+
+  header .container nav ul li {
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  header .container nav ul li:hover::after {
+    content: "";
+    width: unset;
+    background-color: unset;
+  }
+}
