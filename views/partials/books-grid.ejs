@@ -1,0 +1,14 @@
+<div class="books-grid">
+  <% books.map((book) => { %>
+  <div class="book">
+    <!-- Show Books Link -->
+    <div class="card">
+      <div class="cover">
+        <img src="<%= book.imgPath %>" />
+      </div>
+      <span class="title"><%= book.title %></span>
+      <a href="/books/<%= book.id %>" class="btn btn-show">See Book Details</a>
+    </div>
+  </div>
+  <% }) %>
+</div>

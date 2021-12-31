@@ -9,6 +9,7 @@ form.special-form {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+  margin-bottom: 40px;
 }
 
 form.special-form .form-row {
@@ -107,4 +108,17 @@ form.special-form .form-row .form-field textarea {
 
 .btn-group .btn-danger:hover {
   opacity: 1;
+}
+
+/* Small Screens */
+@media (max-width: 992px) {
+  form.special-form .form-row {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  form.special-form .form-row .form-field {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }

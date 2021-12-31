@@ -1,7 +1,9 @@
+<!-- For highlight the li in the navabar -->
+<% activeNow = "newAuthor" %>
+
 <h1>New Author Page</h1>
 <form action="/authors" method="post">
   <%- include('./_form-inputs.ejs') %>
   <a href="/authors" class="btn btn-danger">Cancel</a>
   <button type="submit" class="btn btn-primary">Add</button>
-  <%- include('../partials/errorMessage.ejs') %>
 </form>

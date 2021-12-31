@@ -1,5 +1,7 @@
+<% activeNow="books" %>
+
 <h1>All Books Page</h1>
-<hr />
+<p>Search for specific book</p>
 <!-- Book search Form -->
 <form action="/books" method="get" class="special-form">
   <div class="form-row">
@@ -39,19 +41,4 @@
 </form>
 
 <!-- Display the books details -->
-<hr />
-
-<div class="books-grid">
-  <% books.map((book) => { %>
-  <div class="book">
-    <!-- Show Books Link -->
-    <a href="/books/<%= book.id %>">
-      <div class="card">
-        <img src="<%= book.imgPath %>" width="100" height="150" />
-        <span class="title"><%= book.title %></span>
-      </div>
-    </a>
-  </div>
-
-  <% }) %>
-</div>
+<%- include('../partials/books-grid.ejs') %>

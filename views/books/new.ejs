@@ -1,5 +1,10 @@
+<!-- For highlight the li in the navabar -->
+<% activeNow = "newBook" %>
+
 <h1>Add new Book</h1>
-<hr />
+
+<!-- If we have authors we will display the form for creating new book -->
+<% if(authors.length) { %>
 <form action="/books/" method="POST" class="special-form">
   <%- include('./_form-inputs.ejs') %>
   <div class="btn-group">
@@ -7,5 +12,7 @@
     <a href="/books" class="btn btn-danger">Cancel</a>
   </div>
 </form>
-
-<div class="error"><% if(error){ %> <%= error %> <% }%></div>
+<% } else { %>
+<div class="error">You should first add new Author before adding new book</div>
+<a class="btn btn-primary" href="/authors/new">add new author</a>
+<% } %>

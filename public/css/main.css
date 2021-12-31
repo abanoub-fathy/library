@@ -5,6 +5,7 @@
 @import url("form.css");
 @import url("card.css");
 @import url("book.css");
+@import url("error.css");
 
 :root {
   font-family: mainFont, sans-serif;
@@ -20,6 +21,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
+  position: relative;
+  padding-bottom: 40px;
 }
 
 body::before {
@@ -59,6 +62,13 @@ ul {
   position: relative;
 }
 
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 /* Small Screens */
 @media (min-width: 768px) {
   .container {
@@ -83,3 +93,24 @@ ul {
 .show {
   display: block !important;
 }
+
+/* Start Footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--text-light);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer span {
+  color: #fff;
+}
+
+/* End Footer */

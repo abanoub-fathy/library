@@ -16,6 +16,7 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   font-family: mainFont, sans-serif;
+  color: var(--bg-dark-color);
 }
 
 .btn-primary {
@@ -26,4 +27,8 @@
 .btn-danger {
   background-color: var(--btn-danger-bg);
   color: #fff;
+}
+
+.btn-show {
+  background-color: var(--text-light);
 }

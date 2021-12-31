@@ -1,9 +1,0 @@
-.books-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  row-gap: 40px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  column-gap: calc(10% / 3);
-}

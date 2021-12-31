@@ -1,3 +1,4 @@
+<% if(!activeNow) activeNow = null %> 
 <header>
   <div class="container">
     <div class="logo">
@@ -6,10 +7,10 @@
 
     <nav>
       <ul>
-        <li><a href="/authors/">All Authors</a></li>
-        <li><a href="/authors/new">Add new Author</a></li>
-        <li><a href="/books/">All Books</a></li>
-        <li><a href="/books/new">Add new Book</a></li>
+        <li class="<%= activeNow === "authors" ? "active" : "" %>"><a href="/authors/">All Authors</a></li>
+        <li class="<%= activeNow === "newAuthor" ? "active" : "" %>"><a href="/authors/new">Add new Author</a></li>
+        <li class="<%= activeNow === "books" ? "active" : "" %>"><a href="/books/">All Books</a></li>
+        <li class="<%= activeNow === "newBook" ? "active" : "" %>"><a href="/books/new">Add new Book</a></li>
       </ul>
     </nav>
 

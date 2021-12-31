@@ -86,7 +86,7 @@ const renderNewBookPage = async (res, book, hasError = false) => {
     res.render("books/new", {
       book,
       authors: authors,
-      error: hasError ? "Cannot Create the book" : "",
+      errorMessage: hasError ? "Cannot Create the book" : "",
     });
   } catch {
     res.redirect("/books");
@@ -117,7 +117,7 @@ router.get("/:id/edit", async (req, res) => {
     res.render("books/edit", {
       book,
       authors,
-      error: null,
+      errorMessage: null,
     });
   } catch {
     res.redirect("/books");
@@ -149,7 +149,7 @@ router.patch("/:id", async (req, res) => {
     res.render("books/edit", {
       book,
       authors,
-      error: "cannot update this book!",
+      errorMessage: "cannot update this book!",
     });
   }
 });
