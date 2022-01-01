@@ -1,20 +1,36 @@
-<form action="/authors" method="get">
-  <label for="name"></label>
-  <input type="search" id="name" name="name" value="<%= query %> " />
-  <button type="submit" class="btn btn-primary">Search</button>
+<h2>Search For an Author</h2>
+<form action="/authors" method="get" class="special-form">
+  <div class="form-row">
+    <div class="form-field" style="flex-basis: 100%">
+      <label for="name">Author Name:</label>
+      <input type="search" id="name" name="name" value="<%= query %> " />
+    </div>
+  </div>
+  <div class="btns-group-right">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
 </form>
 <!-- For highlight the li in the navabar -->
 <% activeNow = "authors" %>
 
-<h1>All Authors Page</h1>
-<ul>
+<h3>All Founded Authors</h3>
+<hr />
+
+<ul class="authors-details">
   <% authors.map(({name, id}) => {%>
-  <div>Name: <%= name %>
-  <a href="/authors/<%= id %>" class="btn btn-primary">show</a>
-  <a href="/authors/<%= id %>/edit" class="btn btn-primary">Edit</a>
-  <%- include('../partials/deleteForm.ejs', {url: `/authors/${id}?_method=DELETE`}) %> 
-  <b>Note: delete an author will also delete all related books</b>
-  <hr>
+  <div class="row">
+    <p class="author-name">Name: <span class="uppercase"><%= name %></span></p>
+    <div class="control">
+      <div class="btns-group-right">
+        <a href="/authors/<%= id %>" class="btn btn-primary">show</a>
+        <a href="/authors/<%= id %>/edit" class="btn btn-primary">Edit</a>
+        <%- include('../partials/deleteForm.ejs', {url:
+        `/authors/${id}?_method=DELETE`}) %>
+      </div>
+      <b class="warning">Deleting Author will delete all his/her books</b>
+    </div>
+  </div>
+  <hr />
   <% }) %>
 </ul>
 

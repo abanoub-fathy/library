@@ -1,9 +1,11 @@
 <!-- For highlight the li in the navabar -->
 <% activeNow = "newAuthor" %>
 
-<h1>New Author Page</h1>
-<form action="/authors" method="post">
+<h1>Add new Author</h1>
+<form action="/authors" method="post" class="special-form">
   <%- include('./_form-inputs.ejs') %>
-  <a href="/authors" class="btn btn-danger">Cancel</a>
-  <button type="submit" class="btn btn-primary">Add</button>
+  <div class="btns-group-right">
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a href="/authors" class="btn btn-danger">Cancel</a>
+  </div>
 </form>

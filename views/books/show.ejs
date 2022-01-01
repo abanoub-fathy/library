@@ -1,25 +1,39 @@
-<h1>Title: <%= book.title %></h1>
+<div class="col-2">
+  <div class="book-control">
+    <div class="cover">
+      <img src="<%= book.imgPath %>" alt="image of the cover" />
+    </div>
 
-<div class="image">
-  <img
-    src="<%= book.imgPath %>"
-    width="100"
-    height="150"
-    alt="image of the cover"
-  />
+    <div class="btn-group">
+      <!-- Edit book -->
+      <a href="/books/<%= book.id %>/edit" class="btn btn-primary">Edit Book</a>
+
+      <!-- Show the author -->
+      <a href="/authors/<%= book.author.id %>" class="btn btn-primary"
+        >show Author
+      </a>
+
+      <!-- Delete Book -->
+      <%- include('../partials/deleteForm.ejs', {url:
+      `/books/${book.id}?_method=DELETE`}) %>
+    </div>
+  </div>
+  <div class="info">
+    <div class="labels">
+      <p>Title:</p>
+      <p>Author:</p>
+      <p>Number of Pages:</p>
+      <p>Publish Date:</p>
+      <p>Added Date:</p>
+      <p>Description:</p>
+    </div>
+    <div class="details">
+      <p class="uppercase"><%= book.title %></p>
+      <p class="uppercase"><%= book.author.name %></p>
+      <p class="pages"><%= book.pages %></p>
+      <p class="date"><%= book.publishDate.toDateString() %></p>
+      <p class="date"><%= book.createdAt.toDateString() %></p>
+      <p class="description"><%= book.description %></p>
+    </div>
+  </div>
 </div>
-
-<p class="pages">Number of pages: <%= book.pages %></p>
-<p class="description">Description: <%= book.description %></p>
-<p class="date">Publish Date: <%= book.publishDate.toDateString() %></p>
-<p class="date">Added to library In: <%= book.createdAt.toDateString() %></p>
-<a href="/authors/<%= book.author.id %> ">Author: <%= book.author.name %> </a>
-
-<hr />
-
-<!-- Edit book -->
-<a href="/books/<%= book.id %>/edit" class="btn btn-primary">Edit this book</a>
-
-<!-- Delete Book -->
-<%- include('../partials/deleteForm.ejs', {url:
-`/books/${book.id}?_method=DELETE`}) %>

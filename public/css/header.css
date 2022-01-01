@@ -97,6 +97,10 @@ header .bars .bar {
     display: flex;
   }
 
+  header .container {
+    height: 87.6px;
+  }
+
   header .container nav {
     position: absolute;
     width: 100%;

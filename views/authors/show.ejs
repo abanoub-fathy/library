@@ -1,15 +1,30 @@
 <h2>Author Details</h2>
 <hr />
-<h3><%= author.name %></h3>
-<a href="/authors/<%= author._id %>/edit" class="btn btn-primary">Edit</a>
-<%- include('../partials/deleteForm.ejs', {url:
-`/authors/${author.id}?_method=DELETE`}) %>
+<div class="author-details">
+  <div class="row">
+    <div class="info">
+      <div class="labels">
+        <p>Name:</p>
+        <p>Number of books:</p>
+      </div>
+      <div class="values">
+        <p class="uppercase"><%= author.name %></p>
+        <p class="uppercase"><%= authorBooks.length %></p>
+      </div>
+    </div>
+
+    <div class="btns-group-right">
+      <a href="/authors/<%= author._id %>/edit" class="btn btn-primary">Edit</a>
+      <%- include('../partials/deleteForm.ejs', {url:
+      `/authors/${author.id}?_method=DELETE`}) %>
+    </div>
+  </div>
+</div>
 
 <hr />
 <h3>Books By the Author</h3>
 <!-- Show Author Books -->
-<% if(authorBooks.length) {%>
- <%- include('../partials/books-grid.ejs', {books:authorBooks}) %> 
- <% } else{%>
+<% if(authorBooks.length) {%> <%- include('../partials/books-grid.ejs',
+{books:authorBooks}) %> <% } else{%>
 <div class="error">There is No Books For this Author</div>
 <% } %>

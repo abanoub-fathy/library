@@ -1,7 +1,13 @@
 <h1>Edit Author</h1>
-<form action="/authors/<%= author.id %>?_method=PATCH" method="post">
+<form
+  action="/authors/<%= author.id %>?_method=PATCH"
+  method="post"
+  class="special-form"
+>
   <%- include('./_form-inputs.ejs') %>
-  <a href="/authors/<%= author.id %>" class="btn btn -danger">Cancel</a>
-  <button type="submit" class="btn btn-primary">Update</button>
+  <div class="btns-group-right">
+    <button type="submit" class="btn btn-primary">Ok</button>
+    <a href="/authors/<%= author.id %>" class="btn btn-danger">Cancel</a>
+  </div>
   <%- include('../partials/errorMessage.ejs') %>
 </form>

@@ -101,15 +101,6 @@ form.special-form .form-row .form-field textarea {
   margin-right: 50px;
 }
 
-.btn-group .btn-danger {
-  opacity: 0.5;
-  transition: 0.5s;
-}
-
-.btn-group .btn-danger:hover {
-  opacity: 1;
-}
-
 /* Small Screens */
 @media (max-width: 992px) {
   form.special-form .form-row {

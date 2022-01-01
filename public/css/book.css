@@ -38,3 +38,12 @@
   font-size: 29px;
   align-self: center;
 }
+
+.card .btn-show {
+  transition: 0.5s ease-in-out;
+}
+
+.card .btn-show:hover {
+  background-color: var(--bg-light-color);
+  color: var(--text-light);
+}
