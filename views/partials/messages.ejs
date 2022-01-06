@@ -1,0 +1,44 @@
+<% if(typeof(errors) != 'undefined') { %> <% errors.map(error => { %>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error!</strong> <%= error.msg %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% }) %> <% }%> <% if(success_msg != '') {%>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> <%= success_msg %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %> <% if(error_msg != '') {%>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Error!</strong> <%= error_msg %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %>
+
+<!-- Error from passport -->
+<% if(error != '') {%>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error!</strong> <%= error %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %>

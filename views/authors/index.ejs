@@ -1,4 +1,8 @@
+<!-- For highlight the li in the navabar -->
+<% activeNow = "authors" %>
+
 <h2>Search For an Author</h2>
+<%- include("../partials/messages.ejs") %>
 <form action="/authors" method="get" class="special-form">
   <div class="form-row">
     <div class="form-field" style="flex-basis: 100%">
@@ -10,8 +14,6 @@
     <button type="submit" class="btn btn-primary">Search</button>
   </div>
 </form>
-<!-- For highlight the li in the navabar -->
-<% activeNow = "authors" %>
 
 <h3>All Founded Authors</h3>
 <hr />

@@ -43,12 +43,11 @@
 
     <!-- The body will be replaced with what ever you rendered from views -->
     <div class="container">
-      <%- include('../partials/errorMessage.ejs') %> <%- body %>
+      <%- include("../partials/messages.ejs") %> <%-
+      include('../partials/errorMessage.ejs') %> <%- body %>
     </div>
 
     <!-- This is the footer -->
     <%- include('../partials/footer.ejs') %>
-
-    
   </body>
 </html>

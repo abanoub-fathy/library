@@ -8,6 +8,11 @@ const authorSchema = new mongoose.Schema({
     unique: true,
     lowercase: true,
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
 authorSchema.pre("remove", async function (next) {

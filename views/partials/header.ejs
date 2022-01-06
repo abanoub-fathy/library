@@ -1,23 +1,26 @@
-<% if(!activeNow) activeNow = null %> 
-<header>
-  <div class="container">
-    <div class="logo">
-      <a href="/">popLibrary</a>
+<% if(typeof(activeNow) != "undefined") {%>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="/library">popLibrary</a>
+      </div>
+  
+      <nav>
+        <ul>
+          <li class="<%= activeNow === "authors" ? "active" : "" %>"><a href="/authors/">All Authors</a></li>
+          <li class="<%= activeNow === "newAuthor" ? "active" : "" %>"><a href="/authors/new">Add new Author</a></li>
+          <li class="<%= activeNow === "books" ? "active" : "" %>"><a href="/books/">All Books</a></li>
+          <li class="<%= activeNow === "newBook" ? "active" : "" %>"><a href="/books/new">Add new Book 
+          </a></li>
+        </ul>
+      </nav>
+  
+      <div class="bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
+  </header>
+ <% } %> 
 
-    <nav>
-      <ul>
-        <li class="<%= activeNow === "authors" ? "active" : "" %>"><a href="/authors/">All Authors</a></li>
-        <li class="<%= activeNow === "newAuthor" ? "active" : "" %>"><a href="/authors/new">Add new Author</a></li>
-        <li class="<%= activeNow === "books" ? "active" : "" %>"><a href="/books/">All Books</a></li>
-        <li class="<%= activeNow === "newBook" ? "active" : "" %>"><a href="/books/new">Add new Book</a></li>
-      </ul>
-    </nav>
-
-    <div class="bars">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  </div>
-</header>
