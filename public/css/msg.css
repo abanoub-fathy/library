@@ -1,0 +1,43 @@
+.messages {
+  padding-top: 30px;
+}
+
+.msg {
+  padding: 30px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.error {
+  background-color: plum;
+  color: black;
+}
+
+.error::after {
+  content: "\21";
+  font-family: "Font Awesome 5 Free";
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+  color: darkred;
+}
+
+.success {
+  background-color: palegreen;
+  color: #111;
+}
+
+.success::after {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  color: darkgreen;
+}

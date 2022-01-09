@@ -1,4 +1,4 @@
-form.special-form {
+.special-form {
   padding-top: 50px;
   padding-bottom: 50px;
   padding-right: 30px;
@@ -12,7 +12,7 @@ form.special-form {
   margin-bottom: 40px;
 }
 
-form.special-form .form-row {
+.special-form .form-row {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,7 +20,7 @@ form.special-form .form-row {
   margin-bottom: 40px;
 }
 
-form.special-form .form-row .form-field {
+.special-form .form-row .form-field {
   flex-basis: 45%;
   max-width: 100%;
   display: flex;
@@ -28,26 +28,26 @@ form.special-form .form-row .form-field {
   row-gap: 10px;
 }
 
-form.special-form .special-row {
+.special-form .special-row {
   align-items: stretch;
 }
 
-form.special-form .special-row .form-field:first-child {
+.special-form .special-row .form-field:first-child {
   flex-basis: 30%;
 }
 
-form.special-form .special-row .form-field:last-child {
+.special-form .special-row .form-field:last-child {
   flex-basis: 60%;
 }
 
-form.special-form .form-field-full-width {
+.special-form .form-field-full-width {
   flex-basis: 100% !important;
   max-width: 100%;
 }
 
-form.special-form .form-row .form-field input,
-form.special-form .form-row .form-field select,
-form.special-form .form-row .form-field textarea {
+.special-form .form-row .form-field input,
+.special-form .form-row .form-field select,
+.special-form .form-row .form-field textarea {
   width: 100%;
   padding: 20px;
   outline: none;
@@ -61,13 +61,13 @@ form.special-form .form-row .form-field textarea {
   transition: 0.5s ease-in-out;
 }
 
-form.special-form .form-row .form-field input:focus,
-form.special-form .form-row .form-field select:focus,
-form.special-form .form-row .form-field textarea:focus {
+.special-form .form-row .form-field input:focus,
+.special-form .form-row .form-field select:focus,
+.special-form .form-row .form-field textarea:focus {
   border-color: var(--text-light);
 }
 
-form.special-form .form-row .form-field textarea {
+.special-form .form-row .form-field textarea {
   resize: none;
   height: 100%;
 }
@@ -103,12 +103,12 @@ form.special-form .form-row .form-field textarea {
 
 /* Small Screens */
 @media (max-width: 992px) {
-  form.special-form .form-row {
+  .special-form .form-row {
     flex-direction: column;
     justify-content: stretch;
   }
 
-  form.special-form .form-row .form-field {
+  .special-form .form-row .form-field {
     width: 100%;
     margin-bottom: 40px;
   }

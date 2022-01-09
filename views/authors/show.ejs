@@ -3,7 +3,6 @@
 
 <h2>Author Details</h2>
 <hr />
-<%- include('../partials/messages.ejs') %>
 <div class="author-details">
   <div class="row">
     <div class="info">
@@ -30,5 +29,5 @@
 <!-- Show Author Books -->
 <% if(authorBooks.length) {%> <%- include('../partials/books-grid.ejs',
 {books:authorBooks}) %> <% } else{%>
-<div class="error">There is No Books For this Author</div>
+<div class="msg error">There is No Books For this Author</div>
 <% } %>
