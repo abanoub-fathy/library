@@ -8,6 +8,7 @@
 @import url("msg.css");
 @import url("show-book.css");
 @import url("authors.css");
+@import url("footer.css");
 
 :root {
   font-family: mainFont, sans-serif;
@@ -39,8 +40,8 @@ body::before {
   height: 100%;
   background-image: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.6)
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.68)
   );
 }
 
@@ -59,15 +60,10 @@ ul {
 
 .full-center {
   width: 100%;
-  height: 95vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.full-center > div {
-  padding: 50px 70px;
-  text-align: center;
 }
 
 .text-center {
@@ -90,6 +86,10 @@ h2,
 h3 {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+a {
+  color: var(--text-dark);
 }
 
 /* Small Screens */
@@ -131,24 +131,3 @@ hr {
   border-bottom: 1px solid var(--text-light);
 }
 /* End Styling hr */
-
-/* Start Footer */
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  color: var(--text-light);
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 3;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-footer span {
-  color: #fff;
-}
-
-/* End Footer */

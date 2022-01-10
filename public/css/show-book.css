@@ -19,12 +19,21 @@
   }
 }
 
+.col-2 > .book-control {
+  max-width: 400px;
+}
+
+@media (max-width: 992px) {
+  .col-2 > .book-control {
+    max-width: 100%;
+  }
+}
+
 .col-2 > .book-control .cover {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid var(--text-light);
-  max-height: 350px;
   align-self: center;
 }
 
@@ -45,7 +54,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 20px;
-  width: 300px;
+  width: 100%;
   margin: 30px auto;
 }
 

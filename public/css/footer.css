@@ -1,0 +1,20 @@
+/* Start Footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--text-light);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer span {
+  color: #fff;
+}
+
+/* End Footer */
